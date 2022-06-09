@@ -7,6 +7,12 @@
 #![allow(clippy::too_many_arguments)]
 #![allow(clippy::useless_transmute)]
 
+// WARNING: Fix this ASAP.
+//
+// This appears to be caused by bindgen-created tests.
+// Check to see if the deref actually exists, then work with upstream to fix it.
+#![allow(deref_nullptr)]
+
 #[cfg(all(target_arch = "arm", target_os = "linux"))]
 mod arm_bindings;
 #[cfg(all(target_arch = "arm", target_os = "linux"))]
