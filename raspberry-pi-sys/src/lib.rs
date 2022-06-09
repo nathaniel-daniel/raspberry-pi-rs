@@ -6,7 +6,6 @@
 #![allow(clippy::missing_safety_doc)]
 #![allow(clippy::too_many_arguments)]
 #![allow(clippy::useless_transmute)]
-
 // WARNING: Fix this ASAP.
 //
 // This appears to be caused by bindgen-created tests.

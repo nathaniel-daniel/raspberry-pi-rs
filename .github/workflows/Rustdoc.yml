@@ -25,7 +25,13 @@ jobs:
     - name: Build Documentation
       run: cargo doc --all --no-deps --target aarch64-unknown-linux-gnu
       
-    - name: Deploy Docs
+    - name: Create Docs Folder
+      run: mkdir docs
+    
+    - name: Move AARCH64 docs
+      run: mv ./target/aarch64-unknown-linux-gnu/doc docs/aarch64-unknown-linux-gnu
+      
+    - name: Deploy AARCH64 Docs
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
