@@ -18,6 +18,9 @@ jobs:
         override: true
         components: rustfmt, rust-src
         
+    - name: Install AARCH64 target
+      run: rustup target add aarch64-unknown-linux-gnu
+        
     # TODO : Support multi-target
     - name: Build Documentation
       run: cargo doc --all --no-deps --target aarch64-unknown-linux-gnu
