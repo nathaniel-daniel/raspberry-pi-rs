@@ -18,15 +18,32 @@ jobs:
         override: true
         components: rustfmt, rust-src
         
+    - name: Install ARM target
+      run: rustup target add arm-unknown-linux-gnueabihf
+        
+    - name: Install ARMv7 target
+      run: rustup target add armv7-unknown-linux-gnueabihf
+        
     - name: Install AARCH64 target
       run: rustup target add aarch64-unknown-linux-gnu
-        
-    # TODO : Support multi-target
+     
+    - name: Build ARM Documentation
+      run: cargo doc --all --no-deps --target arm-unknown-linux-gnueabihf 
+     
+    - name: Build ARMv7 Documentation
+      run: cargo doc --all --no-deps --target armv7-unknown-linux-gnueabihf
+      
     - name: Build AARCH64 Documentation
       run: cargo doc --all --no-deps --target aarch64-unknown-linux-gnu
       
     - name: Create Docs Folder
       run: mkdir ./docs
+      
+    - name: Move ARM docs
+      run: mv -v ./target/arm-unknown-linux-gnueabihf/doc ./docs/arm-unknown-linux-gnueabihf
+      
+    - name: Move ARMv7 docs
+      run: mv -v ./target/armv7-unknown-linux-gnueabihf/doc ./docs/armv7-unknown-linux-gnueabihf
     
     - name: Move AARCH64 docs
       run: mv -v ./target/aarch64-unknown-linux-gnu/doc ./docs/aarch64-unknown-linux-gnu
