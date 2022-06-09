@@ -22,11 +22,11 @@ jobs:
       run: rustup target add aarch64-unknown-linux-gnu
         
     # TODO : Support multi-target
-    - name: Build Documentation
+    - name: Build AARCH64 Documentation
       run: cargo doc --all --no-deps --target aarch64-unknown-linux-gnu
       
     - name: Create Docs Folder
-      run: mkdir docs
+      run: mkdir ./docs
     
     - name: Move AARCH64 docs
       run: mv -v ./target/aarch64-unknown-linux-gnu/doc ./docs/aarch64-unknown-linux-gnu
