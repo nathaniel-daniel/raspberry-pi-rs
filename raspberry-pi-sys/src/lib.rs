@@ -5,6 +5,7 @@
 #![allow(clippy::unused_unit)]
 #![allow(clippy::missing_safety_doc)]
 #![allow(clippy::too_many_arguments)]
+#![allow(clippy::useless_transmute)]
 
 #[cfg(all(target_arch = "arm", target_os = "linux"))]
 mod arm_bindings;
