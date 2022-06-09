@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "raspberry-pi-sys",
+    "raspberry-pi",
 ]
 
 [profile.release]
