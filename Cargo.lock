@@ -54,7 +54,6 @@ version = "0.0.0"
 dependencies = [
  "libc",
  "libloading",
- "once_cell",
  "raspberry-pi-sys",
  "thiserror",
 ]
@@ -64,6 +63,14 @@ name = "raspberry-pi-sys"
 version = "0.0.0"
 dependencies = [
  "libloading",
+]
+
+[[package]]
+name = "rust-raspberry-pi"
+version = "0.0.0"
+dependencies = [
+ "once_cell",
+ "thiserror",
 ]
 
 [[package]]

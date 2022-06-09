@@ -2,6 +2,7 @@
 members = [
     "raspberry-pi-sys",
     "raspberry-pi",
+    "rust-raspberry-pi",
 ]
 
 [profile.release]

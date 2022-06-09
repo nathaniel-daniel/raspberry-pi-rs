@@ -8,7 +8,13 @@ Rust Bindings for Raspberry Pi specific APIs.
 ## Packages
 
 ### raspberry-pi-sys
-Low Level Bindings for RaspberryPi specific libraries.
+Low Level Bindings for Raspberry Pi specific libraries.
+
+### raspberry-pi
+High Level Bindings for Raspberry Pi specific libraries.
+
+### rust-raspberry-pi
+Pure (as possible/reasonable) Rust Ports of select Raspberry Pi specific libraries.
 
 ## Documentation
  * [ARM](https://nathaniel-daniel.github.io/raspberry-pi-rs/arm-unknown-linux-gnueabihf/raspberry_pi_sys/)

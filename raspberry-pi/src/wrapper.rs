@@ -1,6 +1,5 @@
 use crate::{
-    bcm_host::{BoardType, ProcessorId},
-    Error,
+    Error, {BoardType, ProcessorId},
 };
 use std::{ffi::CString, os::raw::c_int};
 
