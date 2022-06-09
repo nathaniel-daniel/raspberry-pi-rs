@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BoardType","The board type"],["ProcessorId","The id of the processor"]],"fn":[["get_model_type","Get the type of pi being used"],["get_processor_id","Get the processor id"],["is_fkms_active","Check if fkms is active."],["is_kms_active","Check if kms is active."],["is_model_pi4","Test if the host is a member of the Pi 4 family (4B, 400 and CM4)"]]});

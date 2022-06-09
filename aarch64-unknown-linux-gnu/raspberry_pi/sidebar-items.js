@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BoardType","The board type"],["Error","The error type"],["ProcessorId","The id of the processor"]],"struct":[["RaspberryPi","An interface to RaspberryPi libraries"]]});

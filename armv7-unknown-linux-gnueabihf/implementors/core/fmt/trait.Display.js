@@ -1,0 +1,4 @@
+(function() {var implementors = {};
+implementors["raspberry_pi"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.61.0/core/fmt/trait.Display.html\" title=\"trait core::fmt::Display\">Display</a> for <a class=\"enum\" href=\"raspberry_pi/enum.Error.html\" title=\"enum raspberry_pi::Error\">Error</a>","synthetic":false,"types":["raspberry_pi::Error"]}];
+implementors["rust_raspberry_pi"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.61.0/core/fmt/trait.Display.html\" title=\"trait core::fmt::Display\">Display</a> for <a class=\"enum\" href=\"rust_raspberry_pi/enum.Error.html\" title=\"enum rust_raspberry_pi::Error\">Error</a>","synthetic":false,"types":["rust_raspberry_pi::Error"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
