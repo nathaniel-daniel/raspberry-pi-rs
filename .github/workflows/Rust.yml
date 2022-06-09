@@ -13,25 +13,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
           components: rustfmt, clippy 
           override: true
+          
       - name: RustFmt
         uses: actions-rs/cargo@v1
         with:
           command: fmt
           args: '-- --check --color always'
+          
       - name: Fetch
         uses: actions-rs/cargo@v1
         with:
           command: fetch
-      - name: Clippy
-        uses: actions-rs/cargo@v1
-        with:
-          command: clippy
-          args: '--tests --all --all-features -- -D warnings'
+          
+      - name: Clippy ARM
+        run: cargo clippy --tests --all --all-features --target arm-unknown-linux-gnueabihf -- -D warnings
+        
+      - name: Clippy ARMv7
+        run: cargo clippy --tests --all --all-features --target armv7-unknown-linux-gnueabihf -- -D warnings
+        
+      - name: Clippy AARCH64
+        run: cargo clippy --tests --all --all-features --target aarch64-unknown-linux-gnueabihf -- -D warnings
+        
   cargo-deny:
     runs-on: ubuntu-latest
     steps:
@@ -39,12 +47,22 @@ jobs:
         uses: actions/checkout@v2
       - name: Deny
         uses: EmbarkStudios/cargo-deny-action@v1
+        
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build
-        run: cargo build --verbose
-      - name: Run Tests
-        run: cargo test --all --verbose
+        
+      - name: Build ARM
+        run: cargo build --target arm-unknown-linux-gnueabihf --verbose
+        
+      - name: Build ARMv7
+        run: cargo build --target armv7-unknown-linux-gnueabihf --verbose
+        
+      - name: Build AARCH64
+        run: cargo build --target aarch64-unknown-linux-gnueabihf --verbose
+        
+      # TODO: Use QEMU or similar to test on CI
+      # - name: Run Tests
+      #   run: cargo test --all --verbose
